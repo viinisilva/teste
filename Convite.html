@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Convite para Sair</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+        }
+        h1 {
+            color: #0099cc;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .btn-yes {
+            background-color: #0099cc;
+            color: #fff;
+            margin-right: 20px;
+        }
+        .btn-no {
+            background-color: #ff6b6b;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Convite para Sair</h1>
+        <p>Olá Helo,</p>
+        <p>Gostaria de saber se você gostaria de sair comigo. Topa?</p>
+
+        <div class="btn-container">
+            <button class="btn btn-yes">Sim</button>
+            <button class="btn btn-no">Não</button>
+        </div>
+        
+        <div class="response">
+            <p class="message-yes" style="display:none;">Que ótimo! Mal posso esperar para nosso encontro.</p>
+            <p class="message-no" style="display:none;">Tudo bem, talvez outra vez. Me avise se mudar de ideia!</p>
+        </div>
+        
+        <p>Espero ansiosamente por sua resposta.</p>
+        <p>Com carinho,</p>
+        <p>Vini</p>
+    </div>
+
+    <script>
+        const btnYes = document.querySelector('.btn-yes');
+        const btnNo = document.querySelector('.btn-no');
+        const messageYes = document.querySelector('.message-yes');
+        const messageNo = document.querySelector('.message-no');
+
+        btnYes.addEventListener('click', () => {
+            messageYes.style.display = 'block';
+            setTimeout(() => {
+                messageYes.style.display = 'none';
+            }, 5000); // Oculta a mensagem após 5 segundos (5000 ms)
+        });
+
+        btnNo.addEventListener('click', () => {
+            messageNo.style.display = 'block';
+            setTimeout(() => {
+                messageNo.style.display = 'none';
+            }, 5000); // Oculta a mensagem após 5 segundos (5000 ms)
+        });
+    </script>
+</body>
+</html>
